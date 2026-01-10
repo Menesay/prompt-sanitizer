@@ -130,10 +130,7 @@ prompt-sanitizer/
 
 This project is free and open-source.
 
-## 👨‍💻 Developer
+## 👨‍💻 Vayb Kodır
 
-Created by [Menesay](https://github.com/Menesay/)
+[Menesay](https://github.com/Menesay/)
 
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to submit issues or pull requests.
