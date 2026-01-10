@@ -1,0 +1,39 @@
+# Firestore Security Rules
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Logs collection - only authenticated users can read/write their own logs
+    match /logs/{logId} {
+      allow read: if request.auth != null && resource.data.userId == request.auth.uid;
+      allow create: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow delete: if request.auth != null && resource.data.userId == request.auth.uid; // Allow delete
+      allow update: if false; // Don't allow updates
+    }
+    
+    // Feedbacks collection
+    match /feedbacks/{feedbackId} {
+      // Anyone can read feedbacks
+      allow read: if true;
+      
+      // Only authenticated users can create feedbacks
+      allow create: if request.auth != null && 
+                      request.resource.data.userId == request.auth.uid &&
+                      (request.resource.data.email == request.auth.token.email || 
+                       request.resource.data.isAnonymous == true);
+      
+      // Allow updating likes/dislikes and likedBy/dislikedBy arrays
+      allow update: if request.auth != null &&
+                      (
+                        // Allow updating reaction counts and arrays
+                        (!request.resource.data.diff(resource.data).affectedKeys().hasAny(['userId', 'text', 'timestamp', 'isAnonymous'])) ||
+                        // Or allow user to remove their own feedback fields when toggling reactions
+                        (resource.data.userId == request.auth.uid)
+                      );
+      
+      // Only allow owner to delete their feedback
+      allow delete: if request.auth != null && resource.data.userId == request.auth.uid;
+    }
+  }
+}
