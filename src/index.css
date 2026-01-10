@@ -7,3 +7,16 @@
     @apply bg-slate-950 text-slate-200;
   }
 }
+
+@layer utilities {
+  .rounded,
+  .rounded-sm,
+  .rounded-md,
+  .rounded-lg,
+  .rounded-xl,
+  .rounded-2xl,
+  .rounded-3xl,
+  .rounded-full {
+    border-radius: 0px !important;
+  }
+}
