@@ -2,6 +2,8 @@
 
 A powerful React SPA for detecting and sanitizing sensitive information from prompts. Built with Vite, Tailwind CSS, and Firebase.
 
+ALL ai generated README hahahahah
+
 ## ✨ Features
 
 - **🎭 Guest Mode**: Use the sanitizer without logging in
