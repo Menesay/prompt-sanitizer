@@ -71,7 +71,7 @@ export default function AuthModal({ onClose, onSuccess }) {
                 <div className="bg-slate-900 border border-slate-700 rounded-xl shadow-2xl w-full max-w-md">
                     {/* Header */}
                     <div className="flex items-center justify-between p-6 border-b border-slate-700">
-                        <h2 className="text-2xl font-bold text-cyan-400">
+                        <h2 className="text-2xl font-bold text-blue-400">
                             {isLogin ? 'Login' : 'Register'}
                         </h2>
                         <button
@@ -92,7 +92,7 @@ export default function AuthModal({ onClose, onSuccess }) {
                                 type="email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
-                                className="w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-slate-200 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500"
+                                className="w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-slate-200 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
                                 placeholder="user@corp.com"
                                 required
                             />
@@ -106,7 +106,7 @@ export default function AuthModal({ onClose, onSuccess }) {
                                 type="password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
-                                className="w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-slate-200 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500"
+                                className="w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-slate-200 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
                                 placeholder="••••••••"
                                 required
                             />
@@ -121,7 +121,7 @@ export default function AuthModal({ onClose, onSuccess }) {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="w-full py-3 bg-cyan-600 hover:bg-cyan-700 disabled:bg-cyan-800 text-white font-medium rounded-lg transition-all"
+                            className="w-full py-3 bg-black/60 backdrop-blur-sm border border-blue-500/30 hover:border-blue-500/60 disabled:bg-slate-900/50 text-white font-medium rounded-lg transition-all shadow-lg shadow-blue-500/10"
                         >
                             {loading ? 'Please wait...' : isLogin ? 'Login' : 'Register'}
                         </button>
@@ -133,7 +133,7 @@ export default function AuthModal({ onClose, onSuccess }) {
                                     setIsLogin(!isLogin);
                                     setError('');
                                 }}
-                                className="text-cyan-400 hover:text-cyan-300 text-sm transition-colors"
+                                className="text-blue-400 hover:text-blue-300 text-sm transition-colors"
                             >
                                 {isLogin ? "Don't have an account? Register" : 'Already have an account? Login'}
                             </button>

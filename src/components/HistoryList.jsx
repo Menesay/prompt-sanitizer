@@ -93,7 +93,7 @@ export default function HistoryList({ user }) {
     if (loading) {
         return (
             <div className="flex justify-center py-12">
-                <div className="text-cyan-500 text-xl">Loading history...</div>
+                <div className="text-blue-500 text-xl">Loading history...</div>
             </div>
         );
     }
@@ -116,7 +116,7 @@ export default function HistoryList({ user }) {
                 {logs.map((log) => (
                     <div
                         key={log.id}
-                        className="bg-slate-900/50 border border-slate-700/50 hover:border-cyan-500/30 rounded-lg p-4 transition-all group"
+                        className="bg-black/40 backdrop-blur-sm border border-slate-700/50 hover:border-blue-500/30 rounded-lg p-4 transition-all group"
                     >
                         <div className="flex justify-between items-start gap-4">
                             {/* Text Preview */}
@@ -133,7 +133,7 @@ export default function HistoryList({ user }) {
                             <div className="flex items-center gap-3 flex-shrink-0">
                                 <button
                                     onClick={() => setSelectedLog(log)}
-                                    className="text-slate-500 hover:text-cyan-400 transition-colors p-1"
+                                    className="text-slate-500 hover:text-blue-400 transition-colors p-1"
                                     title="View Details"
                                 >
                                     <FaEye />
@@ -163,7 +163,7 @@ export default function HistoryList({ user }) {
                 <>
                     {/* Backdrop */}
                     <div
-                        className="fixed inset-0 bg-black/80 backdrop-blur-sm z-40"
+                        className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
                         onClick={() => setSelectedLog(null)}
                     />
 
@@ -172,7 +172,7 @@ export default function HistoryList({ user }) {
                         <div className="bg-slate-900 border border-slate-700 rounded-xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden flex flex-col">
                             {/* Header */}
                             <div className="flex items-center justify-between p-6 border-b border-slate-700 bg-slate-900">
-                                <h3 className="text-xl font-bold text-cyan-400">
+                                <h3 className="text-xl font-bold text-blue-400">
                                     {formatDate(selectedLog.timestamp)}
                                 </h3>
                                 <button
@@ -208,11 +208,11 @@ export default function HistoryList({ user }) {
                                 {/* Entities */}
                                 {selectedLog.entities && selectedLog.entities.length > 0 && (
                                     <div>
-                                        <h4 className="font-semibold text-cyan-400 mb-2">Detected Entities</h4>
+                                        <h4 className="font-semibold text-blue-400 mb-2">Detected Entities</h4>
                                         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                                             {selectedLog.entities.map((entity, idx) => (
                                                 <div key={idx} className="bg-slate-900 rounded-lg p-3 text-center border border-slate-800">
-                                                    <div className="text-2xl font-bold text-cyan-400">{entity.count}</div>
+                                                    <div className="text-2xl font-bold text-blue-400">{entity.count}</div>
                                                     <div className="text-sm text-slate-400">{entity.type}</div>
                                                 </div>
                                             ))}
@@ -230,7 +230,7 @@ export default function HistoryList({ user }) {
                 <>
                     {/* Backdrop */}
                     <div
-                        className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50"
+                        className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50"
                         onClick={() => setLogToDelete(null)}
                     />
 

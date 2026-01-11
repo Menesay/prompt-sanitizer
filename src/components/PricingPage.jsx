@@ -41,10 +41,10 @@ export default function PricingPage() {
                 {pricingTiers.map((tier, index) => (
                     <div
                         key={index}
-                        className="bg-slate-800/50 border border-slate-700 rounded-lg p-6 space-y-4 hover:border-cyan-500/50 transition-all"
+                        className="bg-slate-800/50 border border-slate-700 rounded-lg p-6 space-y-4 hover:border-blue-500/50 transition-all"
                     >
                         {/* Tier Name */}
-                        <h3 className="text-2xl font-bold text-cyan-400">{tier.name}</h3>
+                        <h3 className="text-2xl font-bold text-blue-400">{tier.name}</h3>
 
                         {/* Description */}
                         <p className="text-slate-400 text-sm min-h-[3rem]">{tier.description}</p>
@@ -57,7 +57,7 @@ export default function PricingPage() {
                         {/* Features */}
                         <div className="space-y-2 pt-4 border-t border-slate-700">
                             {tier.features.map((feature, idx) => (
-                                <div key={idx} className="flex items-center gap-2 text-emerald-400">
+                                <div key={idx} className="flex items-center gap-2 text-blue-400">
                                     <FaCheck className="flex-shrink-0" />
                                     <span className="text-sm">{feature}</span>
                                 </div>

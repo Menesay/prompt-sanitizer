@@ -196,7 +196,7 @@ export default function FeedbackPage({ user }) {
                 <h1 className="text-3xl font-bold text-slate-100">feedback board</h1>
                 <button
                     onClick={() => setShowSubmitModal(true)}
-                    className="flex items-center gap-2 px-6 py-3 bg-cyan-600 hover:bg-cyan-700 text-white font-semibold rounded-lg transition-all"
+                    className="flex items-center gap-2 px-6 py-3 bg-black/60 backdrop-blur-sm border border-blue-500/30 hover:border-blue-500/60 text-white font-semibold rounded-lg transition-all shadow-lg shadow-blue-500/10"
                 >
                     <FaComments className="text-lg" />
                     Submit New Feedback
@@ -224,7 +224,7 @@ export default function FeedbackPage({ user }) {
                             >
                                 {/* Header */}
                                 <div className="flex items-center justify-between">
-                                    <span className="text-cyan-400 font-medium">{feedback.email}</span>
+                                    <span className="text-blue-400 font-medium">{feedback.email}</span>
                                     <span className="text-slate-500 text-sm">{formatDate(feedback.timestamp)}</span>
                                 </div>
 
@@ -237,8 +237,8 @@ export default function FeedbackPage({ user }) {
                                         <button
                                             onClick={() => handleReaction(feedback.id, 'likes', feedback)}
                                             className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-all ${hasLiked
-                                                    ? 'bg-emerald-900/50 border border-emerald-500 text-emerald-400'
-                                                    : 'bg-slate-900 border border-slate-700 text-slate-400 hover:border-emerald-500'
+                                                ? 'bg-blue-900/50 border border-blue-500 text-blue-400'
+                                                : 'bg-slate-900 border border-slate-700 text-slate-400 hover:border-blue-500'
                                                 }`}
                                         >
                                             <FaThumbsUp />
@@ -247,8 +247,8 @@ export default function FeedbackPage({ user }) {
                                         <button
                                             onClick={() => handleReaction(feedback.id, 'dislikes', feedback)}
                                             className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-all ${hasDisliked
-                                                    ? 'bg-red-900/50 border border-red-500 text-red-400'
-                                                    : 'bg-slate-900 border border-slate-700 text-slate-400 hover:border-red-500'
+                                                ? 'bg-red-900/50 border border-red-500 text-red-400'
+                                                : 'bg-slate-900 border border-slate-700 text-slate-400 hover:border-red-500'
                                                 }`}
                                         >
                                             <FaThumbsDown />
@@ -286,7 +286,7 @@ export default function FeedbackPage({ user }) {
                         <div className="bg-slate-900 border border-slate-700 rounded-xl shadow-2xl w-full max-w-2xl">
                             {/* Header */}
                             <div className="flex items-center justify-between p-6 border-b border-slate-700">
-                                <h2 className="text-2xl font-bold text-cyan-400">Submit Feedback</h2>
+                                <h2 className="text-2xl font-bold text-blue-400">Submit Feedback</h2>
                                 <button
                                     onClick={() => setShowSubmitModal(false)}
                                     className="text-slate-400 hover:text-slate-200 transition-colors"
@@ -307,7 +307,7 @@ export default function FeedbackPage({ user }) {
                                         <textarea
                                             value={newFeedback}
                                             onChange={(e) => setNewFeedback(e.target.value)}
-                                            className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-slate-200 focus:outline-none focus:border-cyan-500 resize-none"
+                                            className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-slate-200 focus:outline-none focus:border-blue-500 resize-none"
                                             rows="5"
                                             placeholder="Share your thoughts..."
                                             disabled={userFeedbackCount >= 5}
@@ -319,7 +319,7 @@ export default function FeedbackPage({ user }) {
                                                 type="checkbox"
                                                 checked={isAnonymous}
                                                 onChange={(e) => setIsAnonymous(e.target.checked)}
-                                                className="w-4 h-4 rounded border-slate-600 bg-slate-800 text-cyan-600 focus:ring-cyan-500"
+                                                className="w-4 h-4 rounded border-slate-600 bg-slate-800 text-blue-600 focus:ring-blue-500"
                                             />
                                             <span>Submit anonymously</span>
                                         </label>
@@ -327,7 +327,7 @@ export default function FeedbackPage({ user }) {
                                         <button
                                             onClick={handleSubmitFeedback}
                                             disabled={!newFeedback.trim() || submitting || userFeedbackCount >= 5}
-                                            className="w-full px-4 py-3 bg-cyan-600 hover:bg-cyan-700 disabled:bg-slate-700 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-all"
+                                            className="w-full px-4 py-3 bg-black/60 backdrop-blur-sm border border-blue-500/30 hover:border-blue-500/60 disabled:bg-slate-900/50 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-all shadow-lg shadow-blue-500/10"
                                         >
                                             {submitting ? 'Submitting...' : 'Submit Feedback'}
                                         </button>

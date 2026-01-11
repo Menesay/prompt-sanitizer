@@ -11,7 +11,7 @@ export default function ProfilePage({ user }) {
             <h1 className="text-3xl font-bold text-center text-slate-100">user profile</h1>
 
             <div className="flex justify-center">
-                <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-8 max-w-2xl w-full hover:border-cyan-500/50 transition-all flex flex-col md:flex-row items-center gap-8">
+                <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-8 max-w-2xl w-full hover:border-blue-500/50 transition-all flex flex-col md:flex-row items-center gap-8">
 
                     {/* Profile Image */}
                     <div className="w-48 h-48 rounded-full bg-slate-700 flex-shrink-0 overflow-hidden border-4 border-slate-600">
@@ -24,7 +24,7 @@ export default function ProfilePage({ user }) {
 
                     {/* Account Details */}
                     <div className="flex-grow space-y-6 w-full text-center md:text-left">
-                        <h2 className="text-2xl font-bold text-cyan-400 border-b border-slate-700 pb-2">
+                        <h2 className="text-2xl font-bold text-blue-400 border-b border-slate-700 pb-2">
                             Account Details
                         </h2>
 

@@ -181,8 +181,9 @@ export default function SanitizerWorkspace({ user }) {
     return (
         <div className="space-y-6">
             {/* Centered Title */}
-            <div className="text-center">
-                <h1 className="text-4xl font-bold text-slate-100 mb-8">prompt sanitizer</h1>
+            <div className="flex flex-col items-center mb-8">
+                <img src="/src/assets/prompt-sanitize-logo-whitebg.png" alt="Prompt Sanitizer Logo" className="w-24 h-24 mb-4 rounded-xl shadow-lg shadow-blue-500/20" />
+                <h1 className="text-4xl font-bold text-slate-100">prompt sanitizer</h1>
             </div>
 
             {/* Disclaimer Banner */}
@@ -202,7 +203,7 @@ export default function SanitizerWorkspace({ user }) {
             <div className="flex justify-center gap-4">
                 <button
                     onClick={handlePaste}
-                    className="flex items-center gap-2 px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-all"
+                    className="flex items-center gap-2 px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-all shadow-lg shadow-red-500/20"
                 >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
@@ -212,15 +213,15 @@ export default function SanitizerWorkspace({ user }) {
                 <button
                     onClick={sanitizeText}
                     disabled={!unsafeText.trim() || processing}
-                    className="flex items-center gap-3 px-8 py-3 bg-cyan-600 hover:bg-cyan-700 disabled:bg-slate-700 disabled:cursor-not-allowed text-white font-semibold rounded-lg shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/50 transition-all"
+                    className="flex items-center gap-3 px-8 py-3 bg-black/60 backdrop-blur-sm border border-blue-500/30 hover:border-blue-500/60 disabled:bg-slate-900/50 disabled:cursor-not-allowed text-blue-400 font-semibold rounded-lg shadow-lg shadow-blue-500/10 hover:shadow-blue-500/20 transition-all font-mono"
                 >
-                    <HiLightningBolt className="text-xl" />
+                    <img src="/src/assets/prompt-sanitize-logo-whitebg.png" alt="Logo" className="w-5 h-5 rounded-sm" />
                     {processing ? 'SANITIZING...' : 'SANITIZE'}
                 </button>
                 <button
                     onClick={handleCopy}
                     disabled={!sanitizedText}
-                    className="flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 disabled:bg-slate-700 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-all"
+                    className="flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 disabled:bg-slate-900/50 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-all shadow-lg shadow-emerald-500/20"
                 >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
@@ -272,75 +273,75 @@ export default function SanitizerWorkspace({ user }) {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                     <label className="flex items-center gap-3 cursor-pointer group">
-                        <div className={`w-5 h-5 rounded border flex items-center justify-center transition-colors ${settings.privateKeys ? 'bg-cyan-600 border-cyan-600' : 'border-slate-600 bg-slate-800'}`}>
+                        <div className={`w-5 h-5 rounded border flex items-center justify-center transition-colors ${settings.privateKeys ? 'bg-blue-600 border-blue-600' : 'border-slate-600 bg-slate-800'}`}>
                             {settings.privateKeys && <FaCheckCircle className="text-white text-xs" />}
                         </div>
                         <input type="checkbox" className="hidden" checked={settings.privateKeys} onChange={() => toggleSetting('privateKeys')} />
-                        <span className="text-slate-300 group-hover:text-cyan-400 transition-colors">Private Keys</span>
+                        <span className="text-slate-300 group-hover:text-blue-400 transition-colors">Private Keys</span>
                     </label>
 
                     <label className="flex items-center gap-3 cursor-pointer group">
-                        <div className={`w-5 h-5 rounded border flex items-center justify-center transition-colors ${settings.slackTokens ? 'bg-cyan-600 border-cyan-600' : 'border-slate-600 bg-slate-800'}`}>
+                        <div className={`w-5 h-5 rounded border flex items-center justify-center transition-colors ${settings.slackTokens ? 'bg-blue-600 border-blue-600' : 'border-slate-600 bg-slate-800'}`}>
                             {settings.slackTokens && <FaCheckCircle className="text-white text-xs" />}
                         </div>
                         <input type="checkbox" className="hidden" checked={settings.slackTokens} onChange={() => toggleSetting('slackTokens')} />
-                        <span className="text-slate-300 group-hover:text-cyan-400 transition-colors">Slack Tokens</span>
+                        <span className="text-slate-300 group-hover:text-blue-400 transition-colors">Slack Tokens</span>
                     </label>
 
                     <label className="flex items-center gap-3 cursor-pointer group">
-                        <div className={`w-5 h-5 rounded border flex items-center justify-center transition-colors ${settings.stripeKeys ? 'bg-cyan-600 border-cyan-600' : 'border-slate-600 bg-slate-800'}`}>
+                        <div className={`w-5 h-5 rounded border flex items-center justify-center transition-colors ${settings.stripeKeys ? 'bg-blue-600 border-blue-600' : 'border-slate-600 bg-slate-800'}`}>
                             {settings.stripeKeys && <FaCheckCircle className="text-white text-xs" />}
                         </div>
                         <input type="checkbox" className="hidden" checked={settings.stripeKeys} onChange={() => toggleSetting('stripeKeys')} />
-                        <span className="text-slate-300 group-hover:text-cyan-400 transition-colors">Stripe API Keys</span>
+                        <span className="text-slate-300 group-hover:text-blue-400 transition-colors">Stripe API Keys</span>
                     </label>
 
                     <label className="flex items-center gap-3 cursor-pointer group">
-                        <div className={`w-5 h-5 rounded border flex items-center justify-center transition-colors ${settings.googleKeys ? 'bg-cyan-600 border-cyan-600' : 'border-slate-600 bg-slate-800'}`}>
+                        <div className={`w-5 h-5 rounded border flex items-center justify-center transition-colors ${settings.googleKeys ? 'bg-blue-600 border-blue-600' : 'border-slate-600 bg-slate-800'}`}>
                             {settings.googleKeys && <FaCheckCircle className="text-white text-xs" />}
                         </div>
                         <input type="checkbox" className="hidden" checked={settings.googleKeys} onChange={() => toggleSetting('googleKeys')} />
-                        <span className="text-slate-300 group-hover:text-cyan-400 transition-colors">Google Cloud API Keys</span>
+                        <span className="text-slate-300 group-hover:text-blue-400 transition-colors">Google Cloud API Keys</span>
                     </label>
 
                     <label className="flex items-center gap-3 cursor-pointer group">
-                        <div className={`w-5 h-5 rounded border flex items-center justify-center transition-colors ${settings.awsKeys ? 'bg-cyan-600 border-cyan-600' : 'border-slate-600 bg-slate-800'}`}>
+                        <div className={`w-5 h-5 rounded border flex items-center justify-center transition-colors ${settings.awsKeys ? 'bg-blue-600 border-blue-600' : 'border-slate-600 bg-slate-800'}`}>
                             {settings.awsKeys && <FaCheckCircle className="text-white text-xs" />}
                         </div>
                         <input type="checkbox" className="hidden" checked={settings.awsKeys} onChange={() => toggleSetting('awsKeys')} />
-                        <span className="text-slate-300 group-hover:text-cyan-400 transition-colors">AWS API Keys</span>
+                        <span className="text-slate-300 group-hover:text-blue-400 transition-colors">AWS API Keys</span>
                     </label>
 
                     <label className="flex items-center gap-3 cursor-pointer group">
-                        <div className={`w-5 h-5 rounded border flex items-center justify-center transition-colors ${settings.emails ? 'bg-cyan-600 border-cyan-600' : 'border-slate-600 bg-slate-800'}`}>
+                        <div className={`w-5 h-5 rounded border flex items-center justify-center transition-colors ${settings.emails ? 'bg-blue-600 border-blue-600' : 'border-slate-600 bg-slate-800'}`}>
                             {settings.emails && <FaCheckCircle className="text-white text-xs" />}
                         </div>
                         <input type="checkbox" className="hidden" checked={settings.emails} onChange={() => toggleSetting('emails')} />
-                        <span className="text-slate-300 group-hover:text-cyan-400 transition-colors">Email Addresses</span>
+                        <span className="text-slate-300 group-hover:text-blue-400 transition-colors">Email Addresses</span>
                     </label>
 
                     <label className="flex items-center gap-3 cursor-pointer group">
-                        <div className={`w-5 h-5 rounded border flex items-center justify-center transition-colors ${settings.iban ? 'bg-cyan-600 border-cyan-600' : 'border-slate-600 bg-slate-800'}`}>
+                        <div className={`w-5 h-5 rounded border flex items-center justify-center transition-colors ${settings.iban ? 'bg-blue-600 border-blue-600' : 'border-slate-600 bg-slate-800'}`}>
                             {settings.iban && <FaCheckCircle className="text-white text-xs" />}
                         </div>
                         <input type="checkbox" className="hidden" checked={settings.iban} onChange={() => toggleSetting('iban')} />
-                        <span className="text-slate-300 group-hover:text-cyan-400 transition-colors">IBAN</span>
+                        <span className="text-slate-300 group-hover:text-blue-400 transition-colors">IBAN</span>
                     </label>
 
                     <label className="flex items-center gap-3 cursor-pointer group">
-                        <div className={`w-5 h-5 rounded border flex items-center justify-center transition-colors ${settings.ips ? 'bg-cyan-600 border-cyan-600' : 'border-slate-600 bg-slate-800'}`}>
+                        <div className={`w-5 h-5 rounded border flex items-center justify-center transition-colors ${settings.ips ? 'bg-blue-600 border-blue-600' : 'border-slate-600 bg-slate-800'}`}>
                             {settings.ips && <FaCheckCircle className="text-white text-xs" />}
                         </div>
                         <input type="checkbox" className="hidden" checked={settings.ips} onChange={() => toggleSetting('ips')} />
-                        <span className="text-slate-300 group-hover:text-cyan-400 transition-colors">IPv4 Addresses</span>
+                        <span className="text-slate-300 group-hover:text-blue-400 transition-colors">IPv4 Addresses</span>
                     </label>
 
                     <label className="flex items-center gap-3 cursor-pointer group">
-                        <div className={`w-5 h-5 rounded border flex items-center justify-center transition-colors ${settings.creditCards ? 'bg-cyan-600 border-cyan-600' : 'border-slate-600 bg-slate-800'}`}>
+                        <div className={`w-5 h-5 rounded border flex items-center justify-center transition-colors ${settings.creditCards ? 'bg-blue-600 border-blue-600' : 'border-slate-600 bg-slate-800'}`}>
                             {settings.creditCards && <FaCheckCircle className="text-white text-xs" />}
                         </div>
                         <input type="checkbox" className="hidden" checked={settings.creditCards} onChange={() => toggleSetting('creditCards')} />
-                        <span className="text-slate-300 group-hover:text-cyan-400 transition-colors">Credit Card Numbers</span>
+                        <span className="text-slate-300 group-hover:text-blue-400 transition-colors">Credit Card Numbers</span>
                     </label>
                 </div>
             </div>
@@ -348,11 +349,11 @@ export default function SanitizerWorkspace({ user }) {
             {/* Detection Summary */}
             {detectedEntities.length > 0 && (
                 <div className="bg-slate-900/50 border border-slate-700 rounded-lg p-4">
-                    <h4 className="font-semibold text-cyan-400 mb-3">Detected Entities:</h4>
+                    <h4 className="font-semibold text-blue-400 mb-3">Detected Entities:</h4>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                         {detectedEntities.map((entity, idx) => (
                             <div key={idx} className="bg-slate-800 rounded-lg p-3 text-center">
-                                <div className="text-2xl font-bold text-cyan-400">{entity.count}</div>
+                                <div className="text-2xl font-bold text-blue-400">{entity.count}</div>
                                 <div className="text-sm text-slate-400">{entity.type}</div>
                             </div>
                         ))}
@@ -362,8 +363,8 @@ export default function SanitizerWorkspace({ user }) {
 
             {/* Guest Toast */}
             {showToast && (
-                <div className="fixed bottom-8 right-8 bg-slate-800 border border-cyan-500 rounded-lg p-4 shadow-xl animate-bounce">
-                    <p className="text-cyan-400 font-medium">Login to save history</p>
+                <div className="fixed bottom-8 right-8 bg-slate-800 border border-blue-500 rounded-lg p-4 shadow-xl animate-bounce">
+                    <p className="text-blue-400 font-medium">Login to save history</p>
                 </div>
             )}
         </div>

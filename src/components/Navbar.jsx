@@ -15,7 +15,7 @@ export default function Navbar({ user, activeTab, onTabChange, onShowAuth }) {
     };
 
     return (
-        <nav className="bg-slate-900/80 backdrop-blur border-b border-slate-800 sticky top-0 z-50">
+        <nav className="bg-black/60 backdrop-blur-sm border-b border-slate-800 sticky top-0 z-50">
             <div className="container mx-auto px-4">
                 <div className="flex items-center justify-between h-16">
                     {/* Left: User Email or Person Icon */}
@@ -23,7 +23,7 @@ export default function Navbar({ user, activeTab, onTabChange, onShowAuth }) {
                         {user ? (
                             <button
                                 onClick={() => onTabChange('profile')}
-                                className="flex items-center gap-2 hover:text-cyan-400 transition-colors"
+                                className="flex items-center gap-2 hover:text-blue-400 transition-colors"
                             >
                                 <FaUser className="text-slate-400" />
                                 <span className="text-sm">{user.email}</span>
@@ -39,17 +39,18 @@ export default function Navbar({ user, activeTab, onTabChange, onShowAuth }) {
                     <div className="flex gap-6">
                         <button
                             onClick={() => onTabChange('sanitizer')}
-                            className={`text-sm transition-all ${activeTab === 'sanitizer'
-                                ? 'text-cyan-400 font-medium'
+                            className={`flex items-center gap-2 text-sm transition-all ${activeTab === 'sanitizer'
+                                ? 'text-blue-400 font-medium'
                                 : 'text-slate-400 hover:text-slate-200'
                                 }`}
                         >
+                            <img src="/src/assets/prompt-sanitize-logo-whitebg.png" alt="Logo" className="w-5 h-5 rounded-sm" />
                             prompt sanitizer
                         </button>
                         <button
                             onClick={() => onTabChange('history')}
                             className={`text-sm transition-all ${activeTab === 'history'
-                                ? 'text-cyan-400 font-medium'
+                                ? 'text-blue-400 font-medium'
                                 : 'text-slate-400 hover:text-slate-200'
                                 }`}
                         >
@@ -58,7 +59,7 @@ export default function Navbar({ user, activeTab, onTabChange, onShowAuth }) {
                         <button
                             onClick={() => onTabChange('feedback')}
                             className={`text-sm transition-all ${activeTab === 'feedback'
-                                ? 'text-cyan-400 font-medium'
+                                ? 'text-blue-400 font-medium'
                                 : 'text-slate-400 hover:text-slate-200'
                                 }`}
                         >
@@ -141,7 +142,7 @@ export default function Navbar({ user, activeTab, onTabChange, onShowAuth }) {
                         ) : (
                             <button
                                 onClick={onShowAuth}
-                                className="flex items-center gap-2 px-4 py-2 bg-cyan-600 hover:bg-cyan-700 text-white text-sm font-semibold rounded-lg transition-all"
+                                className="flex items-center gap-2 px-4 py-2 bg-black/60 backdrop-blur-sm border border-blue-500/30 hover:border-blue-500/60 text-white text-sm font-semibold rounded-lg transition-all shadow-lg shadow-blue-500/10"
                             >
                                 <FaUser />
                                 Login
