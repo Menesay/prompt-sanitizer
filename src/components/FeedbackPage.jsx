@@ -237,8 +237,8 @@ export default function FeedbackPage({ user }) {
                                         <button
                                             onClick={() => handleReaction(feedback.id, 'likes', feedback)}
                                             className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-all ${hasLiked
-                                                ? 'bg-blue-900/50 border border-blue-500 text-blue-400'
-                                                : 'bg-slate-900 border border-slate-700 text-slate-400 hover:border-blue-500'
+                                                ? 'bg-emerald-900/50 border border-emerald-500 text-emerald-400'
+                                                : 'bg-slate-900 border border-slate-700 text-slate-400 hover:border-emerald-500'
                                                 }`}
                                         >
                                             <FaThumbsUp />

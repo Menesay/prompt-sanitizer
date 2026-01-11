@@ -7,7 +7,7 @@ export default function ContactPage() {
             <h1 className="text-3xl font-bold text-center text-slate-100">contact me</h1>
 
             <div className="flex justify-center">
-                <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-8 max-w-sm w-full text-center space-y-6 hover:border-cyan-500/50 transition-all">
+                <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-8 max-w-sm w-full text-center space-y-6 hover:border-blue-500/50 transition-all">
                     {/* Avatar */}
                     <div className="w-32 h-32 mx-auto rounded-full bg-slate-700 flex items-center justify-center overflow-hidden">
                         <img
@@ -19,7 +19,7 @@ export default function ContactPage() {
 
                     {/* Info */}
                     <div className="space-y-2">
-                        <h2 className="text-2xl font-bold text-cyan-400">Menesay</h2>
+                        <h2 className="text-2xl font-bold text-blue-400">Menesay</h2>
                         <p className="text-slate-400 font-medium">Vayb Kodır</p>
                     </div>
 
