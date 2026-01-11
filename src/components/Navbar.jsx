@@ -44,7 +44,7 @@ export default function Navbar({ user, activeTab, onTabChange, onShowAuth }) {
                                 : 'text-slate-400 hover:text-slate-200'
                                 }`}
                         >
-                            <img src="/src/assets/prompt-sanitize-logo-whitebg.png" alt="Logo" className="w-5 h-5 rounded-sm" />
+                            <img src="https://raw.githubusercontent.com/Menesay/prompt-sanitizer/refs/heads/main/src/assets/prompt-sanitize-logo-whitebg.png" alt="Logo" className="w-5 h-5 rounded-sm" />
                             prompt sanitizer
                         </button>
                         <button

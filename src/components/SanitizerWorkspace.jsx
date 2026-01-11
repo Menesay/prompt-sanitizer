@@ -182,7 +182,7 @@ export default function SanitizerWorkspace({ user }) {
         <div className="space-y-6">
             {/* Centered Title */}
             <div className="flex flex-col items-center mb-8">
-                <img src="/src/assets/prompt-sanitize-logo-whitebg.png" alt="Prompt Sanitizer Logo" className="w-24 h-24 mb-4 rounded-xl shadow-lg shadow-blue-500/20" />
+                <img src="https://raw.githubusercontent.com/Menesay/prompt-sanitizer/refs/heads/main/src/assets/prompt-sanitize-logo-whitebg.png" alt="Prompt Sanitizer Logo" className="w-24 h-24 mb-4 rounded-xl shadow-lg shadow-blue-500/20" />
                 <h1 className="text-4xl font-bold text-slate-100">prompt sanitizer</h1>
             </div>
 
@@ -215,7 +215,7 @@ export default function SanitizerWorkspace({ user }) {
                     disabled={!unsafeText.trim() || processing}
                     className="flex items-center gap-3 px-8 py-3 bg-black/60 backdrop-blur-sm border border-blue-500/30 hover:border-blue-500/60 disabled:bg-slate-900/50 disabled:cursor-not-allowed text-blue-400 font-semibold rounded-lg shadow-lg shadow-blue-500/10 hover:shadow-blue-500/20 transition-all font-mono"
                 >
-                    <img src="/src/assets/prompt-sanitize-logo-whitebg.png" alt="Logo" className="w-5 h-5 rounded-sm" />
+                    <img src="https://raw.githubusercontent.com/Menesay/prompt-sanitizer/refs/heads/main/src/assets/prompt-sanitize-logo-whitebg.png" alt="Logo" className="w-5 h-5 rounded-sm" />
                     {processing ? 'SANITIZING...' : 'SANITIZE'}
                 </button>
                 <button
