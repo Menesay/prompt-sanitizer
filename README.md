@@ -1,4 +1,4 @@
-# ALL ai generated README hahahahah
+# ALL ai generated
 Developed using Google Antigravity for MVP.
 
 # prompt-sanitizer
