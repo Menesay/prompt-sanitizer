@@ -3,7 +3,7 @@ Developed using Google Antigravity for MVP.
 
 # 🔒 Prompt Sanitizer
 
-A powerful React SPA for detecting and sanitizing sensitive information from prompts. Built with Vite, Tailwind CSS, and Firebase.
+prompt-sanitizer is a tool designed to prevent data leaks by sanitizing sensitive information from companys LLM prompts.
 
 ## ✨ Features
 
