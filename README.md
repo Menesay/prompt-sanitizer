@@ -1,7 +1,7 @@
 # ALL ai generated README hahahahah
 Developed using Google Antigravity for MVP.
 
-# 🔒 Prompt Sanitizer
+# prompt-sanitizer
 
 prompt-sanitizer is a tool designed to prevent data leaks by sanitizing sensitive information from companys LLM prompts.
 
